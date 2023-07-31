@@ -70,9 +70,9 @@ fn main() -> Result<()> {
         _ => {
             let arguments: Vec<_> = args().collect();
             if args().len() > 2 && arguments[1] == "index" {
-                index(&arguments[2]);
+                index(&arguments[2])?;
             } else if args().len() > 2 && arguments[1] == "search" {
-                search(&arguments[2..]);
+                search(&arguments[2..])?;
             } else {
                 eprintln!("Please provide a top level command of search or index");
             }
